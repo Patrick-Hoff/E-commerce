@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica, sans-serif;
+}
+
+header {
+    height: 80px;
+    background: #F5EEE6;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    position: relative;
+    left: 20%;
+    user-select: none;
+}
+
+h2 {
+    background: linear-gradient(90deg, #00ffff, #ff00c3);
+    width: 100%;
+    -webkit--background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+  }
+
+.div-header {
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    user-select: none;
+    transition: .1s linear;
+    cursor: pointer;
+}
+
+header:hover .div-header {
+    color: #888;
+}
+
+.cart {
+    font-size: 3rem;
+}
+
+#quantity-products {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+main {
+    padding: 20px;
+    user-select: none;
+}
+
+#container-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product {
+    height: 220px;
+    width: 190px;
+    -webkit-box-shadow: -1px -4px 8px 1px rgba(105, 94, 105, 0.76);
+    -moz-box-shadow: -1px -4px 8px 1px rgba(105, 94, 105, 0.76);
+    box-shadow: -1px -4px 8px 1px rgba(105, 94, 105, 0.76);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.product img {
+    height: 50%;
+}
+
+.product button {
+    background: rgba(51, 182, 51, 0.678);
+    border: none;
+    padding: 4px;
+    border-radius: 6px;
+    height: 30px;
+    width: 80%;
+    font-weight: bold;
+    color: #494444d3;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: rgba(51, 182, 51, 0.8);
+    color: white;
+}
+
+nav {
+    position: absolute;
+    background: rgba(91, 199, 91, 0.87);
+    color: white;
+    right: 0;
+    height: calc(100vh - 80px) !important;
+    overflow: hidden;
+    width: 0;
+    transition: .7s ease;
+    font-weight: bold;
+}
+
+nav.active {
+    width: 80%;
+}
+
+nav li {
+    width: 100%;
+    height: 120px;
+    margin-top: 50px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    margin-left: 30px;
+    justify-content: space-evenly;
+}
+
+nav li img {
+    height: 100%;
+}
+
+nav li p {
+    text-align: center;
+}
+
+nav li div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.remove {
+    cursor: pointer;
+    transition: .1s ease;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.remove:hover{
+    color: red;
+}
