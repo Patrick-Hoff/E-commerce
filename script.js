@@ -33,7 +33,17 @@ fetch('./dados.json')
     if (data) {
       const products = data.map(item => item);
 
-      container.innerHTML = products.map((item) => {
+      document.getElementById("search").addEventListener("input", (event) => {
+        const targetToLower = event.target.value.toLowerCase()
+        const filterProducts = products.filter((item) => {
+          return (
+            item.name.toLowerCase().includes(targetToLower)
+          )
+        });itemsVariable(filterProducts)
+      })
+
+      const itemsVariable = (items) => {
+      container.innerHTML = items.map((item) => {
         let { name, image, price } = item;
         return `
           <div class="product">
@@ -44,8 +54,9 @@ fetch('./dados.json')
           </div>
         `;
       }).join("");
-    }
-  });
+    };itemsVariable(products)
+  }
+  }); 
 
 
 

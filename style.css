@@ -14,7 +14,7 @@ header {
 
 h1 {
     position: relative;
-    left: 20%;
+    left: 4%;
     user-select: none;
 }
 
@@ -152,4 +152,15 @@ nav li div {
 
 .remove:hover{
     color: red;
+}
+
+.inputSearch {
+    position: relative;
+    left: 11%;
+    width: 40%;
+    height: 35px;
+    border-radius: 8px;
+    background: #00ffff50;
+    border: 1px solid white;
+    text-align: center;
 }
