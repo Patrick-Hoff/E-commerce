@@ -111,6 +111,7 @@ nav {
     width: 0;
     transition: .7s ease;
     font-weight: bold;
+    overflow-y: auto;
 }
 
 nav.active {
