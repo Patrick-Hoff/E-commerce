@@ -51,12 +51,10 @@ divHeader.addEventListener("click", () => {
 });
 
 
-
-
-
 const navUl = document.getElementById("container-carrinho")
 document.addEventListener("click", (event) => {
   const targetElement = event.target;
+
 
   if (targetElement.classList.contains("add-to-cart-btn")) {
     const target = targetElement.closest(".product")
@@ -87,6 +85,9 @@ document.addEventListener("click", (event) => {
 
     numberCart--
     numbers()
+  }
+  if (!event.target.closest("nav") && !event.target.classList.contains("cart")) {
+    navActive.classList.remove("active");
   }
 });
 
