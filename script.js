@@ -1,27 +1,9 @@
-// async function exibirProdutos() {
-//   const resposta = await fetch('dados.json');
-//   const dadosJson = await resposta.json();
-//   const container = document.getElementById("container-products");
+let numberCart = 0;
+const quantityProducts = document.getElementById("quantity-products")
 
-//   if (dadosJson) {
-//     const products = dadosJson.map(item => item);
-
-//     container.innerHTML = products.map((item) => {
-//       let { name, image, price } = item;
-//       return `
-//         <div class="product">
-//           <img src=${image} />
-//           <p>${name}</p>
-//           <span>${price}</span>
-//           <button id="add-to-cart-btn">Adicionar ao Carrinho</button>
-//         </div>
-//       `;
-//     }).join("");
-//   }
-// }
-
-// exibirProdutos();
-
+function numbers() {
+  quantityProducts.textContent = numberCart
+}
 
 
 
@@ -83,7 +65,8 @@ document.addEventListener("click", (event) => {
     const name = target.querySelector("p").innerText
     const price = target.querySelector("span").innerText
 
-
+    numberCart++
+    numbers()
 
     navUl.innerHTML += `
       <li>
@@ -101,6 +84,9 @@ document.addEventListener("click", (event) => {
     const targetLi = targetElement.closest("li")
 
     targetLi.remove("")
+
+    numberCart--
+    numbers()
   }
 });
 
