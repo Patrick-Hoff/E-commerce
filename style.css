@@ -127,6 +127,10 @@ nav li {
     align-items: center;
     margin-left: 30px;
     justify-content: space-evenly;
+    background: rgba(51, 138, 51, 0.705);
+    border-radius: 15px 0px 0px 15px;
+    width: auto;
+
 }
 
 nav li img {
@@ -166,4 +170,13 @@ nav li div {
     background: #00ffff50;
     border: 1px solid white;
     text-align: center;
+}
+
+.filter-not-products-json {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 20%;
+    font-family: helvetica,sans-serif;
+    font-weight: bold;
+    
 }

@@ -21,13 +21,17 @@ fetch('./dados.json')
           return (
             item.name.toLowerCase().includes(targetToLower)
           )
-        });itemsVariable(filterProducts)
+        }); if ( filterProducts.length > 0 ) {
+          itemsVariable(filterProducts)
+        } else {
+          container.innerHTML = `<span class="filter-not-products-json">Não ha produtos com esse nome</span>`
+        }
       })
 
       const itemsVariable = (items) => {
-      container.innerHTML = items.map((item) => {
-        let { name, image, price } = item;
-        return `
+        container.innerHTML = items.map((item) => {
+          let { name, image, price } = item;
+          return `
           <div class="product">
             <img src=${image} />
             <p>${name}</p>
@@ -35,10 +39,10 @@ fetch('./dados.json')
             <button id="add-to-cart-btn" class="add-to-cart-btn">Adicionar ao Carrinho</button>
           </div>
         `;
-      }).join("");
-    };itemsVariable(products)
-  }
-  }); 
+        }).join("");
+      }; itemsVariable(products)
+    }
+  });
 
 
 
@@ -86,7 +90,7 @@ document.addEventListener("click", (event) => {
     numberCart--
     numbers()
   }
-  if (!event.target.closest("nav") && !event.target.classList.contains("cart")) {
+  if (!event.target.closest("nav") && !event.target.classList.contains("cart") && !event.target.classList.contains("remove")) {
     navActive.classList.remove("active");
   }
 });
